@@ -10,7 +10,7 @@ const connection_url =
  
 // Middlewares
 app.use(express.json())
-app.use(Cors())
+app.use(Cors({ origin: true, credentials: true }));
 // DB Config
 mongoose.connect(connection_url, {useNewUrlParser: true},{useUnifiedTopology: true},).then(() => console.log('MongoDB connection established.')).catch((error) => console.error("MongoDB connection failed:", error.message))
 // API End Points
